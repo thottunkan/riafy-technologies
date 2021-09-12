@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Stocks</title>
+</head>
+<style> 
+    *{
+        margin: 0;
+        top:0;
+    }
+    .brand{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+   .nav{
+        background-color: #f1f9ff;
+        padding: 28px;
+        -webkit-box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13); 
+      box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13);
+   }
+   .wrapper{
+       margin-top: 200px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+        width: 800px;
+       
+   }
+  
+   .searchcontent{
+      width: 800px;
+      margin: auto;
+   }
+   .searchfield{
+       border: none;
+       width: 700px;
+       padding: 20px;
+       border-radius: 5px;
+       -webkit-box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13); 
+      box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13);
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: large;
+      margin-top: -150px;
+
+   }
+   .list-group{
+        width: 700px;
+        margin-top: -45px;
+        z-index: 4;
+    }
+    li{
+       border : .4px solid gray;
+        width: 700px;
+        padding: 20px;
+        cursor: pointer;
+        list-style-type: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: large;
+
+    }
+    .tagline{
+        align-items: center;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+    }
+    h1{
+        align-items: center;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 20pt;
+    
+    }
+    .tagline>p{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .datatable{
+        width: 900px;
+        -webkit-box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13); 
+      box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13);
+      font-weight: bold;
+        
+        margin-top: 50px;
+        border: none;
+        border-radius: 10px;
+       
+    }
+    .datatable>h1{
+        float: left;
+    }
+    p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .c{
+        margin-top: 15px;
+        padding: 20px;
+    }
+    .c>div{
+        height: 50px;
+    }
+    .c>div>p{
+        color:#a3a3a3;
+    }
+
+</style>
+<header>
+    <div class="nav">
+        <div>
+            <h2 class="brand">Stocks</h2>
+        </div>
+    </div>
+</header>
+<body>
+
+        
+        <div class="searchcontent">
+            <div class="tagline">
+                <h1>The easiest way to buy and sell stocks</h1>
+                <p>Stock and analysis and screening tools for investigators in india</p>
+            </div>
+            <div class="wrapper" >
+                <div class="icon" style="margin-top: -150px;">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </div>
+                <input class="searchfield" type="text" id="search">
+                
+            </div>
+              
+            <ul class="list-group" id="searchlist">
+                    
+            </ul>
+
+         
+            
+            
+        </div>
+        <div style="width: 900px; margin: auto;" id="details">
+            <div class="datatable">
+                <h1 id="companytitle">title</h1>
+                <div class="wrapper">
+                    <div class="c" style="flex-direction: column;">
+                        <div style="display: flex;justify-content: space-evenly;">
+                            <p>Market Cap </p> &nbsp;&nbsp;<p style="color: #af4a57;" id="mc">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            <p>Current Price</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="cp">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            <p>Stock P/E</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="stk_pe">2342</p>
+                        </div>
+                        
+                    </div>
+                    <div class="c" style="flex-direction: column;">
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>Divident Yield</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="dy">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>ROCE</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="roce">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>ROE</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="roe">2342</p>
+                        </div>
+                    </div>
+                    <div class="c" style="flex-direction: column;">
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>Debt Equality</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="de">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>Eps</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="eps">2342</p>
+                        </div>
+                        <div style="display: flex;justify-content: space-evenly;">
+                            &nbsp;&nbsp;<p>Reserves</p> &nbsp;&nbsp;<p style="color: #af4a57;" id="reserves">2342</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        
+       <input type="text" hidden name="" id="companyname">
+
+    <script>
+        function _(id) {
+            return document.getElementById(id);
+        }
+        $(document).ready(function(){
+            document.getElementById("details").hidden = true;
+            $("#searchlist").html("");
+            $("#search").keyup(function(){
+                $("#searchlist").fadeIn();
+                var searchdata = $("#search").val();
+                if (searchdata !='') {
+                    $.ajax({
+                        url:"searchItem",
+                        method:"post",
+                        data:{
+                            search:searchdata
+                            },
+                        success:function(data){
+                            console.log(data)
+                            $("#searchlist").fadeIn();
+                            var str = ``;
+                            for(var i =0 ; i<data.length;i++){
+                                str += `<li>${data[i].name}</li>`
+                            }
+                            $("#searchlist").html(str);
+                            
+                        }
+                   
+                     })
+                }else{
+                    $("#searchlist").fadeOut();
+                }
+               
+            })
+            
+            
+        })
+        $(document).on("click","li",function(){
+            $("#companyname").val($(this).text());
+            $("#searchfield").val($(this).text());
+            
+            $("#searchlist").fadeOut();
+
+            var companyname =  $("#companyname").val();
+            $.ajax({
+                        url:"searchItem",
+                        method:"post",
+                        data:{
+                            search:companyname
+                            },
+                        success:function(data){
+                            
+                            console.log(data)
+                            _("companytitle").innerHTML = data[0].name;
+                            _("mc").innerHTML = "&#8377;"+data[0].market_cap;
+                            _("cp").innerHTML = "&#8377;"+data[0].current_market_price;
+                            _("stk_pe").innerHTML = ""+data[0].stock_pe;
+                            _("dy").innerHTML = ""+data[0].dividend_yield;
+                            _("roce").innerHTML = ""+data[0].roce_percentage;
+                            _("roe").innerHTML = ""+data[0].roe_prev_annum;
+                            _("de").innerHTML = ""+data[0].debt_to_equity;
+                            _("eps").innerHTML = ""+data[0].eps;
+                            _("reserves").innerHTML = ""+data[0].reserves;
+                            _("details").hidden = false;
+                            
+                        }
+                   
+                     })
+ 
+        });
+
+        
+    </script>
+</body>
+</html>
