@@ -11,6 +11,29 @@ router.get('/', function(req, res, next) {
 router.get("/search",(req,res,next)=>{
   res.sendFile("search.html",{root:"./views"})
 })
+
+router.post("/login",(req,res,next)=>{
+   const username = req.body.username;
+   const password = req.body.password;
+   
+   var query = "SELECT * FROM `login` WHERE name = '"+username+"'  AND password = '"+password+"'"
+   db.connetion.query(query,(err,result,fields)=>{
+     if (err) {
+       res.redirect("/")
+     }else{
+        console.log(result[0])
+        if (result[0] != undefined) {
+          res.redirect("/search")
+        }
+        else{
+          res.redirect("/")
+        }
+     }
+     
+   })
+   console.log(query)
+})
+
 router.post("/searchItem",(req,res,next)=>{
   
  // res.send(searchHelper.searchItem())

@@ -218,6 +218,7 @@
                      })
                 }else{
                     $("#searchlist").fadeOut();
+                    _("details").hidden = false;
                 }
                
             })
@@ -243,13 +244,13 @@
                             _("companytitle").innerHTML = data[0].name;
                             _("mc").innerHTML = "&#8377;"+data[0].market_cap;
                             _("cp").innerHTML = "&#8377;"+data[0].current_market_price;
-                            _("stk_pe").innerHTML = ""+data[0].stock_pe;
-                            _("dy").innerHTML = ""+data[0].dividend_yield;
-                            _("roce").innerHTML = ""+data[0].roce_percentage;
-                            _("roe").innerHTML = ""+data[0].roe_prev_annum;
-                            _("de").innerHTML = ""+data[0].debt_to_equity;
-                            _("eps").innerHTML = ""+data[0].eps;
-                            _("reserves").innerHTML = ""+data[0].reserves;
+                            _("stk_pe").innerHTML = ""+data[0].stock_pe+"%";
+                            _("dy").innerHTML = ""+data[0].dividend_yield+"%";
+                            _("roce").innerHTML = ""+data[0].roce_percentage+"%";
+                            _("roe").innerHTML = ""+data[0].roe_prev_annum+"%";
+                            _("de").innerHTML = ""+data[0].debt_to_equity+"%";
+                            _("eps").innerHTML = "&#8377;"+data[0].eps;
+                            _("reserves").innerHTML = "&#8377;"+data[0].reserves;
                             _("details").hidden = false;
                             
                         }

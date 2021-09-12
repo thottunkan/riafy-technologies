@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style> 
+    *{
+        margin: 0;
+        top:0;
+    }
+    .brand{ 
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+      .nav{
+        background-color: #f1f9ff;
+        padding: 28px;
+        -webkit-box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13); 
+      box-shadow: 3px 9px 15px 5px rgba(0,0,0,0.13);
+   }
+   .logincontainer{
+       width: 600px;
+       margin: auto;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+       margin-top: 100px;
+   }
+   .textfiled{
+       width: 400px;
+       height: 40px;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       font-weight: bold;
+       border-radius: 5px;
+       border:2px solid black;
+
+   }
+   .submit{
+       width: 410px;
+       border-radius: 5px;
+       border:none;
+       background-color: black;
+       color: white;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       font-weight: bold;
+       height: 40px;
+       cursor: pointer;
+   }
+</style>    
+<header>
+    <div class="nav">
+        <div>
+            <h2 class="brand">Stocks</h2>
+        </div>
+    </div>
+</header>
+<body>
+    <center>
+    <div class="logincontainer">
+
+        <form action="/login" method="post">
+            <table>
+                <h2>Login</h2>
+                <tr>
+                    
+                    <td><input class="textfiled" type="text" name="username" placeholder="username"></td>
+                </tr>
+                <tr>
+                    
+                    <td><input class="textfiled" type="password" name="password" placeholder="passoword"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Login" class="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+    </center>
+</body>
+</html>
